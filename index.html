@@ -1,9 +1,40 @@
-<script>
-    function computerPlay(){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // this function gets the computers choice by pulling a random string from the array and returns value
+        function computerPlay(){
 
-        console.log(Math.floor(Math.random() * 3)); 
+            const compOptions = ["rock", "paper", "scissors"];
+            return compOptions[Math.floor(Math.random() * compOptions.length)];  
+        }
 
-    }
-    
-    
-</script>
+        // this function prompts user to pick and returns choice
+        function playerChoice(){
+            const playerSelect = window.prompt("Rock, Paper, Scissors!");
+            return playerSelect.toLowerCase().trim();
+        }
+
+        // call computer and player functions
+        playerChoice();
+        computerPlay();
+
+        // this function gets data from player and computer functions and determines the winner
+        function playRound(playerSelection, computerSelection){
+            playerSelection = playerChoice();
+            computerSelection = computerPlay();
+            console.log("You picked: " + playerSelection);
+            console.log("Computer picked: " + computerSelection);
+        }
+        
+        
+    </script>
+</body>
+</html>
