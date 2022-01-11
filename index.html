@@ -22,16 +22,29 @@
             return playerSelect.toLowerCase().trim();
         }
 
-        // call computer and player functions
-        playerChoice();
+        // call computer function
         computerPlay();
 
-        // this function gets data from player and computer functions and determines the winner
+        // this function gets data from player and computer functions and determines the winner for each round
         function playRound(playerSelection, computerSelection){
             playerSelection = playerChoice();
             computerSelection = computerPlay();
             console.log("You picked: " + playerSelection);
             console.log("Computer picked: " + computerSelection);
+
+            if (playerSelection === "rock" && computerSelection === "scissors"){
+                console.log("Rock beats scissors. You win!");
+            }else if (playerSelection === "scissors" && computerSelection === "paper"){
+                console.log("Scissors beats paper. You win!");
+            }else if (playerSelection === "paper" && computerSelection === "rock"){
+                console.log("Paper beats rock. You win!");
+            }else{
+                console.log("You lost");
+            }
+        }
+        
+        function game(){
+            
         }
         
         
