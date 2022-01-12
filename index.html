@@ -8,6 +8,11 @@
 </head>
 <body>
     <script>
+
+        // variables to hold wins, losses, and draws
+        let wins = 0;
+        let losses = 0;
+        let draws = 0;
         
         // this function gets the computers choice by pulling a random string from the array and returns value
         function computerPlay(){
@@ -18,7 +23,7 @@
 
         // this function prompts user to pick and returns choice
         function playerChoice(){
-            const playerSelect = window.prompt("Rock, Paper, Scissors!");
+            const playerSelect = prompt("Rock, Paper, Scissors!");
             return playerSelect.toLowerCase().trim();
         }
 
@@ -32,20 +37,52 @@
             console.log("You picked: " + playerSelection);
             console.log("Computer picked: " + computerSelection);
 
+            
             if (playerSelection === "rock" && computerSelection === "scissors"){
                 console.log("Rock beats scissors. You win!");
+                wins ++;
+                console.log("Wins: " + wins);
+                console.log("Losses: " + losses);
+                console.log("Draws: " + draws);
             }else if (playerSelection === "scissors" && computerSelection === "paper"){
                 console.log("Scissors beats paper. You win!");
+                wins ++;
+                console.log("Wins: " + wins);
+                console.log("Losses: " + losses);
+                console.log("Draws: " + draws);
             }else if (playerSelection === "paper" && computerSelection === "rock"){
                 console.log("Paper beats rock. You win!");
-            }else{
+                wins ++;
+                console.log("Wins: " + wins);
+                console.log("Losses: " + losses);
+                console.log("Draws: " + draws);
+            }else if (playerSelection === computerSelection){
+                console.log("It was a draw");
+                draws ++;
+                console.log("Wins: " + wins);
+                console.log("Losses: " + losses);
+                console.log("Draws: " + draws);
+            } else{
                 console.log("You lost");
+                losses ++;
+                console.log("Wins: " + wins);
+                console.log("Losses: " + losses);
+                console.log("Draws: " + draws);
             }
+
         }
         
+        // this function starts the game over and plays up to 5 rounds
         function game(){
-            
+            let count = 5;
+            for(let i = 0; i < count; i++){
+                playRound();
+            }
         }
+
+        // call game function
+        game();
+        
         
         
     </script>
